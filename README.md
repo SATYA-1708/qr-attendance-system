@@ -1,31 +1,28 @@
-# qr-attendance-system
+# QR Attendance System
 
-Java Spring Boot and Spring Security QR Code Based Student Attendance System.
+A QR-enabled attendance application with Java backend source and a React interface. The backend models users, roles, sessions, and attendance; the interface contains login, scan, user-dashboard, and admin-dashboard pages.
 
-<!-- Update: 2026-02-23T09:13:33 -->
-<!-- Update: 2026-02-23T10:48:36 -->
-<!-- Update: 2026-02-23T12:46:13 -->
-<!-- Update: 2026-02-23T14:47:27 -->
-<!-- Update: 2026-02-23T16:17:34 -->
-<!-- Update: 2026-02-23T18:36:10 -->
-<!-- Update: 2026-02-24T10:39:28 -->
-<!-- Update: 2026-02-24T12:33:19 -->
-<!-- Update: 2026-02-24T14:25:17 -->
-<!-- Update: 2026-02-24T16:40:49 -->
-<!-- Update: 2026-02-24T18:49:33 -->
-<!-- Update: 2026-02-25T10:32:12 -->
-<!-- Update: 2026-02-25T12:52:12 -->
-<!-- Update: 2026-02-25T14:08:26 -->
-<!-- Update: 2026-02-25T16:17:20 -->
-<!-- Update: 2026-02-25T18:44:50 -->
-<!-- Update: 2026-02-26T09:27:54 -->
-<!-- Update: 2026-02-26T12:09:24 -->
-<!-- Update: 2026-02-26T16:05:54 -->
-<!-- Update: 2026-02-27T09:28:22 -->
-<!-- Update: 2026-02-27T11:34:20 -->
-<!-- Update: 2026-02-27T14:22:15 -->
-<!-- Update: 2026-02-27T17:07:16 -->
-<!-- Update: 2026-02-28T09:52:12 -->
-<!-- Update: 2026-02-28T11:46:50 -->
-<!-- Update: 2026-02-28T14:46:45 -->
-<!-- Update: 2026-02-28T17:30:30 -->
+## Architecture
+
+```mermaid
+flowchart LR
+  UI[React client] --> API[Java attendance service]
+  API --> Auth[JWT filter and security config]
+  API --> Data[User, session and attendance repositories]
+```
+
+## Repository layout
+
+- `backend/src/main/java/com/qrattendance/controller/` — attendance, auth, and profile controllers.
+- `backend/src/main/java/com/qrattendance/security/` — JWT utilities and filter.
+- `backend/src/main/java/com/qrattendance/model/` and `repository/` — domain and data-access types.
+- `backend/src/main/resources/application.yml` — service configuration.
+- `frontend/src/pages/` — login, scan, and dashboards.
+
+## Setup status
+
+No Maven/Gradle build file or frontend package manifest is tracked, so a reproducible local build cannot be documented. Review `application.yml` for database and secret settings before running; replace development secrets and never commit production credentials.
+
+## API and next steps
+
+Controller source is the API reference. Add build manifests, a sanitized sample configuration, database setup instructions, and endpoint examples. No deployment configuration or `LICENSE` file was found, so reuse terms are unspecified.
